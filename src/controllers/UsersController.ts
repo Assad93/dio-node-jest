@@ -2,11 +2,11 @@ import { Request, Response } from "express";
 import database from "../database";
 
 class UsersControllers {
-  public static async getUsers(request: Request, response: Response) {
+  public static getUsers(request: Request, response: Response): Response {
     return response.json(database);
   }
 
-  public static async createUser(request: Request, response: Response) {
+  public static createUser(request: Request, response: Response): Response {
     const { name } = request.body;
 
     if (name.length < 1) {
